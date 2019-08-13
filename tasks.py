@@ -1,9 +1,14 @@
 from invoke import task
-
-import config
+import sys
 
 
 @task
 def init(c):
-    """Initialize cloned project"""
-    c.run('python3 -m pip install -r requirements.txt')
+    """Initialize cloned project."""
+    c.run(f'{sys.executable} -m pip install -r requirements.txt')
+
+
+@task
+def run(c, path):
+    """Run python script."""
+    c.run(f'{sys.executable} {path}')
