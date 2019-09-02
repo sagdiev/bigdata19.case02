@@ -70,7 +70,12 @@ def process(frame):
                 if x1>x and y1>y and x1+w1<x+w and y1+h1<y+h:
                     cv2.rectangle(frame, (x1, y1), (x1 + w1, y1 + h1), (0, 0, 255), 2)
 
-
+    # Вот пример хорошего варианта
+    #faces = [o1, o2, o3]
+    #all_eyes = [e1, e2, e3, e4, e5, e6]
+    #eye_on_face = lambda e, f: f.x < e.x < (f.x + f.w) and f.y < e.y < (e.y + e.h)
+    #visible_eyes = [e for e in all_eyes if any(eye_on_face(e, f) for f in faces)]
+    #any(['', None, []]) == False
 
     # 4. Return initial color frame with rectangles
     return frame
